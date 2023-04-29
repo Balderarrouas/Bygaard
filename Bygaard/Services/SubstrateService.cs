@@ -27,10 +27,7 @@ namespace Bygaard.Services
         public Substrate Create(SubstrateDto model)
         {
             var substrate = _mapper.Map<Substrate>(model);
-            // var stock = _context.Stock.FirstOrDefault(x => x.Name == model.Name);
-            //
-            // substrate.StockId = stock.StockId;
-            
+
             substrate.CreatedAt = DateTime.Now;
             substrate.UpdatedAt = DateTime.Now;
             

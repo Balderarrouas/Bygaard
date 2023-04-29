@@ -10,6 +10,8 @@ namespace Bygaard.Mapping
         {
             CreateMap<SubstrateDto, Substrate>();
             CreateMap<Substrate, SubstrateDto>();
+            CreateMap<StockItemDto, StockItem>();
+            CreateMap<StockItem, StockItemDto>();
         }
     }
 }

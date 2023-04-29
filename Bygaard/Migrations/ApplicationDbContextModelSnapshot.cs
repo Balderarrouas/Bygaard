@@ -47,51 +47,51 @@ namespace Bygaard.Migrations
                     b.HasData(
                         new
                         {
-                            GrowRoomId = new Guid("a2aa3bda-3255-4ff6-937f-579d71850a0a"),
-                            CreatedAt = new DateTime(2023, 2, 17, 13, 7, 1, 375, DateTimeKind.Local).AddTicks(5697),
+                            GrowRoomId = new Guid("e6e822cc-1265-4049-9e58-f26f1430e690"),
+                            CreatedAt = new DateTime(2023, 4, 29, 14, 36, 13, 958, DateTimeKind.Local).AddTicks(7613),
                             Name = "1",
                             NumberOfTrolleys = 16,
-                            UpdatedAt = new DateTime(2023, 2, 17, 13, 7, 1, 377, DateTimeKind.Local).AddTicks(7332)
+                            UpdatedAt = new DateTime(2023, 4, 29, 14, 36, 13, 961, DateTimeKind.Local).AddTicks(419)
                         },
                         new
                         {
-                            GrowRoomId = new Guid("542d024c-651b-4642-a7d6-433dd2584684"),
-                            CreatedAt = new DateTime(2023, 2, 17, 13, 7, 1, 377, DateTimeKind.Local).AddTicks(7691),
+                            GrowRoomId = new Guid("581e65c4-9218-419f-bcc7-d8f5d51ceb72"),
+                            CreatedAt = new DateTime(2023, 4, 29, 14, 36, 13, 961, DateTimeKind.Local).AddTicks(794),
                             Name = "2",
                             NumberOfTrolleys = 16,
-                            UpdatedAt = new DateTime(2023, 2, 17, 13, 7, 1, 377, DateTimeKind.Local).AddTicks(7701)
+                            UpdatedAt = new DateTime(2023, 4, 29, 14, 36, 13, 961, DateTimeKind.Local).AddTicks(805)
                         },
                         new
                         {
-                            GrowRoomId = new Guid("613cf80c-75bd-45af-ad33-87ab6c66c07f"),
-                            CreatedAt = new DateTime(2023, 2, 17, 13, 7, 1, 377, DateTimeKind.Local).AddTicks(7704),
+                            GrowRoomId = new Guid("cb036669-86d9-4e54-96f1-a6bda078965e"),
+                            CreatedAt = new DateTime(2023, 4, 29, 14, 36, 13, 961, DateTimeKind.Local).AddTicks(809),
                             Name = "3",
                             NumberOfTrolleys = 16,
-                            UpdatedAt = new DateTime(2023, 2, 17, 13, 7, 1, 377, DateTimeKind.Local).AddTicks(7707)
+                            UpdatedAt = new DateTime(2023, 4, 29, 14, 36, 13, 961, DateTimeKind.Local).AddTicks(811)
                         },
                         new
                         {
-                            GrowRoomId = new Guid("ddb0750f-a819-430a-9da5-73c36711c7ac"),
-                            CreatedAt = new DateTime(2023, 2, 17, 13, 7, 1, 377, DateTimeKind.Local).AddTicks(7710),
+                            GrowRoomId = new Guid("6c251710-0762-4ddd-b3a9-3e374ca7faac"),
+                            CreatedAt = new DateTime(2023, 4, 29, 14, 36, 13, 961, DateTimeKind.Local).AddTicks(814),
                             Name = "4",
                             NumberOfTrolleys = 16,
-                            UpdatedAt = new DateTime(2023, 2, 17, 13, 7, 1, 377, DateTimeKind.Local).AddTicks(7711)
+                            UpdatedAt = new DateTime(2023, 4, 29, 14, 36, 13, 961, DateTimeKind.Local).AddTicks(815)
                         },
                         new
                         {
-                            GrowRoomId = new Guid("41ed5331-e32e-4ff4-97f7-f5a6376320f0"),
-                            CreatedAt = new DateTime(2023, 2, 17, 13, 7, 1, 377, DateTimeKind.Local).AddTicks(7714),
+                            GrowRoomId = new Guid("60235772-37ea-4624-b23f-d3f50f480a80"),
+                            CreatedAt = new DateTime(2023, 4, 29, 14, 36, 13, 961, DateTimeKind.Local).AddTicks(818),
                             Name = "5",
                             NumberOfTrolleys = 16,
-                            UpdatedAt = new DateTime(2023, 2, 17, 13, 7, 1, 377, DateTimeKind.Local).AddTicks(7716)
+                            UpdatedAt = new DateTime(2023, 4, 29, 14, 36, 13, 961, DateTimeKind.Local).AddTicks(820)
                         },
                         new
                         {
-                            GrowRoomId = new Guid("b1914f96-425e-4f73-83b7-1d44e0b4b552"),
-                            CreatedAt = new DateTime(2023, 2, 17, 13, 7, 1, 377, DateTimeKind.Local).AddTicks(7718),
+                            GrowRoomId = new Guid("f2b2c5c5-df43-49d8-90db-3d8ec3aecc45"),
+                            CreatedAt = new DateTime(2023, 4, 29, 14, 36, 13, 961, DateTimeKind.Local).AddTicks(823),
                             Name = "6",
                             NumberOfTrolleys = 16,
-                            UpdatedAt = new DateTime(2023, 2, 17, 13, 7, 1, 377, DateTimeKind.Local).AddTicks(7720)
+                            UpdatedAt = new DateTime(2023, 4, 29, 14, 36, 13, 961, DateTimeKind.Local).AddTicks(825)
                         });
                 });
 
@@ -111,9 +111,31 @@ namespace Bygaard.Migrations
                     b.HasData(
                         new
                         {
-                            StockId = new Guid("55ff02c4-50b4-483c-8594-84b2996b667e"),
+                            StockId = new Guid("5a4dead3-e0c3-437a-9408-b960cc9a4780"),
                             Name = "Main Storage"
                         });
+                });
+
+            modelBuilder.Entity("Bygaard.Entities.StockItem", b =>
+                {
+                    b.Property<Guid>("StockItemId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<double>("Amount")
+                        .HasColumnType("float");
+
+                    b.Property<Guid>("StockId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("SubstrateName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("StockItemId");
+
+                    b.HasIndex("StockId");
+
+                    b.ToTable("StockItem");
                 });
 
             modelBuilder.Entity("Bygaard.Entities.Substrate", b =>
@@ -149,23 +171,18 @@ namespace Bygaard.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("StockId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime2");
 
                     b.HasKey("SubstrateId");
 
-                    b.HasIndex("StockId");
-
                     b.ToTable("Substrates");
                 });
 
-            modelBuilder.Entity("Bygaard.Entities.Substrate", b =>
+            modelBuilder.Entity("Bygaard.Entities.StockItem", b =>
                 {
                     b.HasOne("Bygaard.Entities.Stock", "Stock")
-                        .WithMany("Substrates")
+                        .WithMany("StockItems")
                         .HasForeignKey("StockId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -175,7 +192,7 @@ namespace Bygaard.Migrations
 
             modelBuilder.Entity("Bygaard.Entities.Stock", b =>
                 {
-                    b.Navigation("Substrates");
+                    b.Navigation("StockItems");
                 });
 #pragma warning restore 612, 618
         }
