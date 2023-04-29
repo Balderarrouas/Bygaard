@@ -11,7 +11,6 @@ namespace Bygaard.Dto
         public int DaysInOpeningPhase1 { get; set; }
         public int DaysInOpeningPhase2 { get; set; }
         public int DaysInHarvestingPhase { get; set; }
-        public double KgsInStock { get; set; }
         public Guid StockId { get; set; }
     }
 }

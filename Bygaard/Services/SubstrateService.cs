@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using AutoMapper;
 using Bygaard.Data;
 using Bygaard.Dto;
@@ -24,6 +27,10 @@ namespace Bygaard.Services
         public Substrate Create(SubstrateDto model)
         {
             var substrate = _mapper.Map<Substrate>(model);
+            // var stock = _context.Stock.FirstOrDefault(x => x.Name == model.Name);
+            //
+            // substrate.StockId = stock.StockId;
+            
             substrate.CreatedAt = DateTime.Now;
             substrate.UpdatedAt = DateTime.Now;
             
@@ -31,6 +38,54 @@ namespace Bygaard.Services
             _context.SaveChanges();
             
             return substrate;
+        }
+
+        public async Task<List<Substrate>> GetAll()
+        {
+            
+            var substrateList = _context.Substrates.ToList();
+
+            return substrateList;
+        }
+        
+
+        public Substrate GetById(Guid id)
+        {
+            var substrate = _context.Substrates.FirstOrDefault(x => x.SubstrateId == id);
+
+            return substrate;
+        }
+
+        public Substrate Update(SubstrateDto model, Guid id)
+        {
+            var updatedSubstrate = _context.Substrates.SingleOrDefault(x => x.SubstrateId == id);
+
+            updatedSubstrate.Name = model.Name;
+            updatedSubstrate.LatinName = model.LatinName;
+            updatedSubstrate.DaysInGrowthPhase = model.DaysInGrowthPhase;
+            updatedSubstrate.DaysInOpeningPhase1 = model.DaysInOpeningPhase1;
+            updatedSubstrate.DaysInOpeningPhase2 = model.DaysInOpeningPhase2;
+            updatedSubstrate.DaysInHarvestingPhase = model.DaysInHarvestingPhase;
+            
+            // var stock = _context.Stock.FirstOrDefault(x => x.Name == model.Name);
+            // updatedSubstrate.StockId = stock.StockId;
+            
+            
+            _context.Substrates.Update(updatedSubstrate);
+            _context.SaveChanges();
+
+            return updatedSubstrate;
+        }
+
+        public Substrate Delete(Guid id)
+        {
+            var substrateToDelete = _context.Substrates.Find(id);
+            
+            substrateToDelete.DeletedAt = DateTime.Now;
+
+            _context.SaveChanges();
+
+            return substrateToDelete;
         }
     }
 }

@@ -1,5 +1,8 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using Bygaard.Dto;
+using Bygaard.Entities;
 using Bygaard.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -28,6 +31,38 @@ namespace Bygaard.Controllers
 
             return Ok(response);
         }
-        
+
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            var response = await _substrateService.GetAll();
+
+            return Ok(response);
+        }
+
+        [HttpGet("/{id:guid}")]
+        public IActionResult GetById(Guid id)
+        {
+            var response = _substrateService.GetById(id);
+
+            return Ok(response);
+        }
+
+        [HttpPut("/{id:guid}")]
+        public IActionResult Update(SubstrateDto model, Guid id)
+        {
+            var response = _substrateService.Update(model, id);
+
+            return Ok(response);
+        }
+
+        [HttpDelete("/{id:guid}")]
+        public IActionResult Delete(Guid id)
+        {
+            var response = _substrateService.Delete(id);
+
+            return Ok(response);
+        }
+
     }
 }
