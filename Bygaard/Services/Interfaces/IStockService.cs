@@ -12,8 +12,8 @@ namespace Bygaard.Services.Interfaces
         StockItem Create(StockItemDto model);
 
         Task<List<StockItem>> GetAllBySubstrate(SimpleStockItemRequest model);
-
-        StockItem GetBySubstrate(SimpleStockItemRequest model);
+        
+        TotalSubstrateStockResponse GetBySubstrate(SimpleStockItemRequest model);
 
         StockItem Update(StockItemDto model, Guid id);
 

@@ -2,6 +2,6 @@
 {
     public class SimpleStockItemRequest
     {
-        public string SubstrateNamme { get; set; }
+        public string SubstrateName { get; set; }
     }
 }

@@ -12,6 +12,8 @@ namespace Bygaard.Mapping
             CreateMap<Substrate, SubstrateDto>();
             CreateMap<StockItemDto, StockItem>();
             CreateMap<StockItem, StockItemDto>();
+            CreateMap<Batch, BatchDto>();
+            CreateMap<BatchDto, Batch>();
         }
     }
 }

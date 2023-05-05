@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ldR3zzYAd0pjqqprxZcchpetchw7ntorSswhLKzKi7Thu/6afhW+DRsXuQ8FTc63LvYlSoIlFmoYwaT481BFXw==",
+  "dgSpecHash": "OvV5bclIb05hOqk3hv88U4ae92i/rcaj8qGy5T8KqpFrSgjT6CxQ3Y8+Q6lo/lXVbpKOt010iFw36gbsHph0Vg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\balde\\source\\repos\\Bygaard\\Bygaard\\Bygaard.csproj",
+  "projectFilePath": "C:\\Users\\balde\\source\\repos\\Bygaard\\bygaard\\Bygaard.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\balde\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\balde\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",

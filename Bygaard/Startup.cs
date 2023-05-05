@@ -27,6 +27,7 @@ namespace Bygaard
             services.AddControllers();
             services.AddTransient<ISubstrateService, SubstrateService>();
             services.AddTransient<IStockService, StockService>();
+            services.AddTransient<IBatchService, BatchService>();
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo { Title = "Bygaard", Version = "v1" }); });
             

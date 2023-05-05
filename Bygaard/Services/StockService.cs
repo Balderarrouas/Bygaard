@@ -26,7 +26,9 @@ namespace Bygaard.Services
         public StockItem Create(StockItemDto model)
         {
             var stockItem = _mapper.Map<StockItem>(model);
-
+            
+            stockItem.CreatedAt = DateTime.Now;
+            stockItem.UpdatedAt = DateTime.Now;
             _context.StockItems.Add(stockItem);
             _context.SaveChanges();
 
@@ -35,16 +37,29 @@ namespace Bygaard.Services
 
         public async Task<List<StockItem>> GetAllBySubstrate(SimpleStockItemRequest model)
         {
-            var stockItemList = _context.StockItems.ToList();
-
+            var stockItemList = _context.StockItems.Where(x => x.SubstrateName == model.SubstrateName).ToList();
+        
             return stockItemList;
         }
 
-        public StockItem GetBySubstrate(SimpleStockItemRequest model)
+        public TotalSubstrateStockResponse GetBySubstrate(SimpleStockItemRequest model)
         {
-            var stockItemBySubstrate = _context.StockItems.FirstOrDefault(x => x.SubstrateName == model.SubstrateNamme);
+            var totalObj = new TotalSubstrateStockResponse();
+            var total = 0.0;
+            
+            var stockItemList = _context.StockItems.Where(x => x.SubstrateName == model.SubstrateName).ToList();
 
-            return stockItemBySubstrate;
+            foreach (var item in stockItemList)
+            {
+                total += item.Amount;
+            }
+
+            totalObj.Substrate = model.SubstrateName;
+            totalObj.KilosInStock = total;
+            
+            
+        
+            return totalObj;
         }
 
         public StockItem Update(StockItemDto model, Guid id)

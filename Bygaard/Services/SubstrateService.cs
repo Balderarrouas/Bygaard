@@ -59,14 +59,8 @@ namespace Bygaard.Services
 
             updatedSubstrate.Name = model.Name;
             updatedSubstrate.LatinName = model.LatinName;
-            updatedSubstrate.DaysInGrowthPhase = model.DaysInGrowthPhase;
-            updatedSubstrate.DaysInOpeningPhase1 = model.DaysInOpeningPhase1;
-            updatedSubstrate.DaysInOpeningPhase2 = model.DaysInOpeningPhase2;
-            updatedSubstrate.DaysInHarvestingPhase = model.DaysInHarvestingPhase;
-            
-            // var stock = _context.Stock.FirstOrDefault(x => x.Name == model.Name);
-            // updatedSubstrate.StockId = stock.StockId;
-            
+            updatedSubstrate.DaysToGrow = model.DaysToGrow;
+           
             
             _context.Substrates.Update(updatedSubstrate);
             _context.SaveChanges();

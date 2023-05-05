@@ -4,14 +4,16 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Bygaard.Data.Config
 {
-    public class SubstrateConfig : IEntityTypeConfiguration<Substrate>
+    public class BatchConfig : IEntityTypeConfiguration<Batch>
     {
-        public void Configure(EntityTypeBuilder<Substrate> builder)
+        public void Configure(EntityTypeBuilder<Batch> builder)
         {
-            builder.HasKey(substrate => substrate.SubstrateId);
+            builder.HasKey(batch => batch.BatchId);
             builder.HasQueryFilter(x => x.DeletedAt == null);
+
+           
+               
+            
         }
-
-
     }
 }
