@@ -13,12 +13,12 @@
      
      [ApiController]
      [Route("api/[controller]")]
-     public class StockController : Controller
+     public class StockItemController : Controller
      {
 
          private readonly IStockService _stockService;
 
-         public StockController(IStockService stockService)
+         public StockItemController(IStockService stockService)
          {
              _stockService = stockService;
          }
@@ -47,7 +47,7 @@
              return Ok(response);
          }
          
-         [HttpPut("/Update/{id:guid}")]
+         [HttpPut("/UpdateStockItem/{id:guid}")]
          public IActionResult Update(StockItemDto model, Guid id)
          {
              var response = _stockService.Update(model, id);
@@ -55,7 +55,7 @@
              return Ok(response);
          }
          
-         [HttpDelete("/Delete/{id:guid}")]
+         [HttpDelete("/DeleteStockItem/{id:guid}")]
          public IActionResult Delete(Guid id)
          {
              var response = _stockService.Delete(id);

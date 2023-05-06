@@ -51,7 +51,7 @@ namespace Bygaard.Services
 
             foreach (var item in stockItemList)
             {
-                total += item.Amount;
+                total += item.KilosOfProduce;
             }
 
             totalObj.Substrate = model.SubstrateName;
@@ -67,7 +67,7 @@ namespace Bygaard.Services
             var updatedStockItem = _context.StockItems.SingleOrDefault(x => x.StockItemId == id);
 
             updatedStockItem.SubstrateName = model.SubstrateName;
-            updatedStockItem.Amount = model.Amount;
+            updatedStockItem.KilosOfProduce = model.KilosOfProduce;
             updatedStockItem.UpdatedAt = DateTime.Now;
 
             _context.StockItems.Update(updatedStockItem);

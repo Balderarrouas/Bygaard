@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\balde\\source\\repos\\Bygaard\\bygaard\\Bygaard.csproj": {}
+    "C:\\Users\\balde\\source\\repos\\Bygaard\\Bygaard\\Bygaard.csproj": {}
   },
   "projects": {
-    "C:\\Users\\balde\\source\\repos\\Bygaard\\bygaard\\Bygaard.csproj": {
+    "C:\\Users\\balde\\source\\repos\\Bygaard\\Bygaard\\Bygaard.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\balde\\source\\repos\\Bygaard\\bygaard\\Bygaard.csproj",
+        "projectUniqueName": "C:\\Users\\balde\\source\\repos\\Bygaard\\Bygaard\\Bygaard.csproj",
         "projectName": "Bygaard",
-        "projectPath": "C:\\Users\\balde\\source\\repos\\Bygaard\\bygaard\\Bygaard.csproj",
+        "projectPath": "C:\\Users\\balde\\source\\repos\\Bygaard\\Bygaard\\Bygaard.csproj",
         "packagesPath": "C:\\Users\\balde\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\balde\\source\\repos\\Bygaard\\bygaard\\obj\\",
+        "outputPath": "C:\\Users\\balde\\source\\repos\\Bygaard\\Bygaard\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\balde\\AppData\\Roaming\\NuGet\\NuGet.Config",

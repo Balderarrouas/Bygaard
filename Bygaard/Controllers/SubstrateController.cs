@@ -40,7 +40,7 @@ namespace Bygaard.Controllers
             return Ok(response);
         }
 
-        [HttpGet("/{id:guid}")]
+        [HttpGet("/GetSubstrateById/{id:guid}")]
         public IActionResult GetById(Guid id)
         {
             var response = _substrateService.GetById(id);
@@ -48,7 +48,7 @@ namespace Bygaard.Controllers
             return Ok(response);
         }
 
-        [HttpPut("/{id:guid}")]
+        [HttpPut("/UpdateSubstrate/{id:guid}")]
         public IActionResult Update(SubstrateDto model, Guid id)
         {
             var response = _substrateService.Update(model, id);
@@ -56,13 +56,12 @@ namespace Bygaard.Controllers
             return Ok(response);
         }
 
-        [HttpDelete("/{id:guid}")]
+        [HttpDelete("/DeleteSubstrate/{id:guid}")]
         public IActionResult Delete(Guid id)
         {
             var response = _substrateService.Delete(id);
 
             return Ok(response);
         }
-
     }
 }

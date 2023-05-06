@@ -3,6 +3,6 @@
     public class StockItemDto
     {
         public string SubstrateName { get; set; }
-        public double Amount { get; set; }
+        public double KilosOfProduce { get; set; }
     }
 }

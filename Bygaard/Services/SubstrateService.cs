@@ -60,6 +60,7 @@ namespace Bygaard.Services
             updatedSubstrate.Name = model.Name;
             updatedSubstrate.LatinName = model.LatinName;
             updatedSubstrate.DaysToGrow = model.DaysToGrow;
+            updatedSubstrate.UpdatedAt = DateTime.Now;
            
             
             _context.Substrates.Update(updatedSubstrate);
