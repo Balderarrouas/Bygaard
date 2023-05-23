@@ -88,6 +88,7 @@ namespace Bygaard.Services
                 averageObj.TotalProduce += substrateItem.KilosOfProduce;
             }
 
+            averageObj.SubstrateName = model.SubstrateName;
             averageObj.AverageProducePerKiloOfSubstrate = averageObj.TotalProduce / averageObj.TotalSubstrate;
 
             return averageObj;

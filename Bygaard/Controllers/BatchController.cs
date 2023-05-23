@@ -29,7 +29,7 @@ namespace Bygaard.Controllers
             return Ok(response);
         }
 
-        [HttpPost("api/[controller]/GetAverage")]
+        [HttpPost("/GetAverage")]
         public IActionResult GetAverage(AverageRequest model)
         {
             var response = _batchService.GetAverage(model);
@@ -37,7 +37,7 @@ namespace Bygaard.Controllers
             return Ok(response);
         }
 
-        [HttpPost("api/[controller]/GetRequiredAmountOfSubstrate")]
+        [HttpPost("/GetRequiredAmountOfSubstrate")]
         public IActionResult CalculateAmount(RequiredSubstrateRequest model)
         {
             var response = _batchService.CalculateAmount(model);
